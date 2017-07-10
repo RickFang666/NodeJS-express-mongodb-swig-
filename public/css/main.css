@@ -1,0 +1,62 @@
+/*
+* @Author: Administrator
+* @Date:   2017-07-09 19:52:04
+* @Last Modified by:   RickFang666
+* @Last Modified time: 2017-07-10 22:29:20
+*/
+body {
+  background: #ddd;
+}
+
+box {
+  box-sizing: border-box;
+}
+/* 头部样式 */
+.header-bg {
+  height: 100px;
+  width: 100%;
+  background: pink;
+}
+/* 文章样式 */
+.article-wrap div{
+
+}
+.article {
+  background: #fff;
+  margin-top: 30px;
+}
+/* 侧部样式 */
+.aside-wrap {
+
+}
+
+.aside-wrap .aside {
+  background: #fff;
+  margin-top: 30px;
+  padding:5px;
+}
+.aside-wrap .aside h3 {
+  margin: 0;
+}
+.aside-wrap .aside .form-left {
+      width: 65px;
+      float: left;
+    }
+.aside-wrap .aside .form-right {
+      overflow: hidden;
+      margin-left: 55px;
+    }
+.aside-wrap .aside label {
+  height: 26px;
+  line-height: 26px;
+  margin-bottom: 5px;
+}
+.aside-wrap .aside input {
+  width: 100%;
+  margin-bottom: 5px;
+}
+.aside-wrap .user-info,
+.aside-wrap .user-login {
+  display: none;
+}
+
