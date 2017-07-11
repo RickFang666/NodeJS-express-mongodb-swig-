@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2017-07-10 11:14:57
 * @Last Modified by:   RickFang666
-* @Last Modified time: 2017-07-10 23:28:40
+* @Last Modified time: 2017-07-11 17:42:55
 */
 
 'use strict';
@@ -87,13 +87,21 @@ $(function (){
           default:
             message();
             setTimeout(function (){
-              $userInfo.show();
-              console.log(result.userInfo.username);
-              $userInfo.find('.user-username').html(result.userInfo.username);
-              $userLogin.hide();
+              window.location.reload();
             }, 1000);
             break;
         }
+      }
+    })
+  })
+  //退出登录
+  $('#logout').on('click',function (){
+    $.ajax({
+      url:'/api/user/logout',
+      success: function (result){
+          if(!result.code) {
+            window.location.reload();
+          }
       }
     })
   })

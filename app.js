@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2017-07-09 17:27:53
 * @Last Modified by:   RickFang666
-* @Last Modified time: 2017-07-10 20:45:58
+* @Last Modified time: 2017-07-11 21:22:09
 */
 'use strict';
 // 加载express模块
@@ -15,6 +15,10 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 // 创建app应用==>NodeJS http.createServer();
 var app = express();
+// 加载User模块
+var User = require('./models/User.js')
+//加载cookies模块
+var Cookies = require('cookies');
 // 设置静态文件托管,当用户访问url以、/public开头，直接返回
 // 对应文件夹__dirname + '/public'下的文件
 app.use('/public',express.static(__dirname + '/public'))
@@ -38,6 +42,27 @@ app.set('view engine','html')
 swig.setDefaults({cache:false});
 //bodyPrase 设置
 app.use(bodyParser.urlencoded({extended: true}));
+// cookies设置
+app.use(function(req,res,next){
+    req.cookies = new Cookies(req,res);
+    // 解析登录用户cookie信息
+    if(req.cookies.get('userInfo')){
+      try{
+        req.userInfo = JSON.parse(req.cookies.get('userInfo'));
+        // 获取当前登录用户的类型，是否是管理员
+        User.findById(req.userInfo._id).then(function (userInfo){
+            req.userInfo.isAdmin = Boolean(userInfo.isAdmin);
+            next();
+        })
+      }catch(e){
+        next()
+      }
+    }else{
+      next();
+    }
+
+});
+
 //根据不同的功能划分模块
 app.use('/admin',require('./routers/admin'));
 app.use('/api',require('./routers/api'));

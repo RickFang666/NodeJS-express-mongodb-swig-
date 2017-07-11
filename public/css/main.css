@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2017-07-09 19:52:04
 * @Last Modified by:   RickFang666
-* @Last Modified time: 2017-07-10 22:29:20
+* @Last Modified time: 2017-07-11 18:31:27
 */
 body {
   background: #ddd;
@@ -55,8 +55,8 @@ box {
   width: 100%;
   margin-bottom: 5px;
 }
-.aside-wrap .user-info,
-.aside-wrap .user-login {
+/* .aside-wrap .user-info, */
+.aside-wrap .user-register {
   display: none;
 }
 

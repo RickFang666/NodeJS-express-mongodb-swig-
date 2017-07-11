@@ -27,10 +27,9 @@
           <a class="navbar-brand" href="#">Rick's Blog</a>
         </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">首页</a></li>
             <li><a href="#">Link</a></li>
             <li><a href="#">Link</a></li>
             <li><a href="#">Link</a></li>
@@ -95,12 +94,21 @@
         <!-- 侧部版心-->
         <div class="aside-wrap col-md-3 col-sm-3 hidden-xs">
           <!-- 侧部 -->
+          {% if userInfo._id %}
           <aside class="aside user-info" id="user-info">
               <h3>用户信息</h3>
-              <p class="user-username"></p>
-              <p>你好，欢迎光临我的博客<a href="javascript:;"></a></p>
-              <p><a href="">退出</a></p>
+              <p class="user-username">{{userInfo.username}}</p>
+              {% if userInfo.isAdmin %}
+              <p>你好，你是管理员</p>
+              <p>
+                <a href="/admin">点击进入后台管理</a>
+              </p>
+              {% else %}
+              <p>你好，欢迎光临我的博客</p>
+              {% endif %}
+              <p><a href="javascript:;" id="logout">退出</a></p>
           </aside>
+          {% else %}
           <aside class="aside user-login" id="user-login">
             <h3>登录</h3>
             <form action="">
@@ -135,6 +143,7 @@
             <p class="login-prompt">已有账号？<a href="javascript:;" class="to-login">马上登录</a></p>
             <p class="back-prompt"></p>
           </aside>
+          {% endif %}
           <aside class="aside community">
             <h3>社区</h3>
           </aside>

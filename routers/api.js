@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2017-07-09 20:07:44
 * @Last Modified by:   RickFang666
-* @Last Modified time: 2017-07-10 23:17:21
+* @Last Modified time: 2017-07-11 17:51:11
 */
 
 'use strict';
@@ -95,8 +95,18 @@ router.post('/user/login',function (req,res){
       _id: userInfo._id,
       username: userInfo.username
     }
+    req.cookies.set('userInfo',JSON.stringify({
+      _id: userInfo._id,
+      username: userInfo.username
+    }))
     res.json(responseData);
     return;
   })
 })
+// 退出登录
+router.get('/user/logout',function (req,res){
+  req.cookies.set('userInfo',null);
+  res.json(responseData);
+})
+
 module.exports = router;
