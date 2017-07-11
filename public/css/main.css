@@ -2,28 +2,37 @@
 * @Author: Administrator
 * @Date:   2017-07-09 19:52:04
 * @Last Modified by:   RickFang666
-* @Last Modified time: 2017-07-11 18:31:27
+* @Last Modified time: 2017-07-11 23:39:36
 */
 body {
   background: #ddd;
 }
-
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
 box {
   box-sizing: border-box;
 }
 /* 头部样式 */
-.header-bg {
+/* .header-bg {
   height: 100px;
   width: 100%;
   background: pink;
-}
+} */
 /* 文章样式 */
 .article-wrap div{
 
 }
 .article {
-  background: #fff;
+  background: transparent;
   margin-top: 30px;
+  border: 1px solid #eee;
 }
 /* 侧部样式 */
 .aside-wrap {
@@ -31,7 +40,8 @@ box {
 }
 
 .aside-wrap .aside {
-  background: #fff;
+  background: transparent;
+  border: 1px solid #eee;
   margin-top: 30px;
   padding:5px;
 }
