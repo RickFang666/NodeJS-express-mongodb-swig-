@@ -1,11 +1,3 @@
-/*
-* @Author: Administrator
-* @Date:   2017-07-10 11:14:57
-* @Last Modified by:   RickFang666
-* @Last Modified time: 2017-07-11 17:42:55
-*/
-
-'use strict';
 $(function (){
   var $userLogin = $('#user-login');
   var $userRegister = $('#user-register');

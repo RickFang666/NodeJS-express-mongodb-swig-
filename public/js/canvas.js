@@ -1,10 +1,3 @@
-/*
-* @Author: RickFang666
-* @Date:   2017-07-11 23:25:06
-* @Last Modified by:   RickFang666
-* @Last Modified time: 2017-07-11 23:27:32
-*/
-
 'use strict';
 ;(function (){
   document.addEventListener('touchmove', function (e) {

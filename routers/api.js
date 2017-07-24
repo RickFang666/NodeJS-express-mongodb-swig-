@@ -1,10 +1,3 @@
-/*
-* @Author: Administrator
-* @Date:   2017-07-09 20:07:44
-* @Last Modified by:   RickFang666
-* @Last Modified time: 2017-07-11 17:51:11
-*/
-
 'use strict';
 var express = require('express');
 var router = express.Router();

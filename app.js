@@ -1,10 +1,3 @@
-/*
-* @Author: Administrator
-* @Date:   2017-07-09 17:27:53
-* @Last Modified by:   RickFang666
-* @Last Modified time: 2017-07-11 21:22:09
-*/
-'use strict';
 // 加载express模块
 var express = require('express')
 // 加载模板处理模块
