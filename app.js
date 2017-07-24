@@ -1,3 +1,4 @@
+'use strict';
 // 加载express模块
 var express = require('express')
 // 加载模板处理模块
