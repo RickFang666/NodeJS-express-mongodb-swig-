@@ -1,7 +1,7 @@
 # A blog system base on NodeJS-express-mongodb-swig
 ## develop ongoing
 ### directory list
-![]('dirlist.png')
+![]('./dirList.png')
 ### mongodb connect
 ```
 cd to MongoDB\Server\3.2\bin
